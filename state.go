@@ -1,12 +1,16 @@
 package main
 
-import "fmt"
+type deck []string
 
+func newDeck() deck {
+	cards := deck{}
 
-type cards []string
-
-func(c cards) print() {
-	for i, card := range c{
-		fmt.Println(i, card)
+	cardSuits := []string{"Spades", "Diamonds", "Hearts", "Clubs"}
+	cardValues := []string{"Ace", "Two", "Three", "Four"}
+	for _, suits := range cardSuits {
+		for _, values := range cardValues {
+			cards = append(cards, suits+" of "+values+" ,")
+		}
 	}
+	return cards
 }
