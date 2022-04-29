@@ -1,11 +1,8 @@
 package main
 
-import "fmt"
 
-func main() {
-	cards := []int{2, 4, 6}
-	cards = append(cards, 8)
-	for index,  card := range cards {
-		fmt.Println(index, card)
-	}
+func main(){
+	card := cards{"Ace of Spades", "Two of Diamonds", "Three of Hearts"}
+	card = append(card, "Four of Clubs")
+	card.print()
 }

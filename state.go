@@ -1,7 +1,12 @@
 package main
 
 import "fmt"
- 
-func printState() {
-    fmt.Println("California")
+
+
+type cards []string
+
+func(c cards) print() {
+	for i, card := range c{
+		fmt.Println(i, card)
+	}
 }
