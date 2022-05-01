@@ -4,5 +4,6 @@ import "fmt"
 
 func main() {
 	greetings := "Hello"
-	fmt.Println([]byte(greetings))
+	greetings = (greetings + " World")
+	fmt.Printf("%v %T", greetings, greetings)
 }
