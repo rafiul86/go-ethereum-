@@ -1,13 +1,21 @@
 package main
 
 import "fmt"
-
+type people struct {
+	count string
+	time int
+}
+type person struct {
+	people
+	name string
+	age int
+}
 func main() {
-num := [] int {1,2,3,4,5}
-num2 := [] int {6,7,8,9,10}
-num3 := append(num, num2...)
-num[3] = 22
-fmt.Println(num)
-fmt.Println(num2)
-fmt.Println(num3)
+Loop:
+	for i := 0; i < 10; i++ {
+		for j := 0; j < 10; j++ {
+			if i*j >= 15 { break Loop }
+			fmt.Println(i, "*", j, "=", i*j)
+		}
+		}
 }
