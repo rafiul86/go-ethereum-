@@ -2,14 +2,11 @@ package main
 
 import (
 	"fmt"
+	"myapp/doctor"
 )
 
 func main() {
-	nyNum := printNum(12, 14)
-	fmt.Println(nyNum)
-}
+	whatToSay := doctor.Intro()
 
-func printNum (num1 int, num2 int) (result int) {
-	result = num1 + num2
-	return
+	fmt.Println(whatToSay)
 }
