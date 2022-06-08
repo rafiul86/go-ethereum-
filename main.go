@@ -3,17 +3,21 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math/rand"
 	"os"
+	"time"
 )
 
 const prompt = "and press Enter when ready."
 // main function of Guess number game
 func main() {
-	// declare essential variables
+	// use seed to generate random number
+	rand.Seed(time.Now().UnixNano())
+	
 
-	var firstNumber = 2
-    var secondNumber = 5
-	var subtraction = 7
+	var firstNumber = rand.Intn(8) + 2 
+    var secondNumber = rand.Intn(8) + 2
+	var subtraction = rand.Intn(8) + 2
 	var answer int
 	reader := bufio.NewReader(os.Stdin)
 	fmt.Println("Welcome to the Guess Number Game!")
