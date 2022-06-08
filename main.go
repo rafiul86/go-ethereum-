@@ -7,6 +7,8 @@ import (
 	"os"
 	"strings"
 )
+
+// main function
 func main() {
 	sayHello := doctor.Intro()
 	fmt.Println(sayHello)
