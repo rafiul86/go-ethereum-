@@ -1,20 +1,33 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
+
+var chan1 = make(chan string)
+var chan2 = make(chan string)
+
+func task1() {
+	time.Sleep(1 * time.Second)
+	chan1 <- "one"
+}
+
+func task2() {
+	time.Sleep(1 * time.Second)
+	chan2 <- "two"
+}
 
 func main() {
-	ok := true
-	for i := 0; i < 6; i++ {
-		if i%4 == 3 {
-			ok = false
-			switch ok {
-			case true:
-				fmt.Println(i, "ok is true")
-			case false:
-				fmt.Println(i, "ok is false")
-			default:
-				fmt.Println(i, "ok is unknown")
-			}
+	go task1()
+	go task2()
+
+	for i := 0; i < 2; i++ {
+		select {
+		case msg1 := <-chan1:
+			fmt.Println("received", msg1)
+		case msg2 := <-chan2:
+			fmt.Println("received", msg2)
 		}
 	}
 }
