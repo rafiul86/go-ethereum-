@@ -1,16 +1,20 @@
 package main
 
-import (
-	"app/doctor"
-	"fmt"
-)
-
+import "fmt"
 
 func main() {
-
-	nur := doctor.Nurse{Name: "Larry",Age: 30}
-
-	age := nur.Talk()
-	fmt.Println(age)
+	ok := true
+	for i := 0; i < 6; i++ {
+		if i%4 == 3 {
+			ok = false
+			switch ok {
+			case true:
+				fmt.Println(i, "ok is true")
+			case false:
+				fmt.Println(i, "ok is false")
+			default:
+				fmt.Println(i, "ok is unknown")
+			}
+		}
+	}
 }
-	
