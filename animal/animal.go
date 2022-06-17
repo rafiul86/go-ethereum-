@@ -10,10 +10,10 @@ type Cat struct {
 	Leg   int
 }
 
-func (d Dog) Bark() {
+func (d *Dog) Bark() {
 	println(d.Sound)
 }
 
-func (c Cat) Mew() {
+func (c *Cat) Mew() {
 	println(c.Sound)
 }
