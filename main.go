@@ -4,9 +4,11 @@ import (
 	"fmt"
 )
 
-func main() {
-	car, price := "PRADO", 50000
+const (
+	c1 = iota +1
+	c2 
+)
 
-	car, year := "Audi", 2010
-	fmt.Println(car, year, price)
+func main() {
+	fmt.Println(c1, c2)
 }
