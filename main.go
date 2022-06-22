@@ -2,13 +2,12 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
-const (
-	c1 = iota +1
-	c2 
-)
+
 
 func main() {
-	fmt.Println(c1, c2)
+	a := math.Pow(2, 3)
+	fmt.Println(a)
 }
