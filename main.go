@@ -1,13 +1,11 @@
 package main
 
-import (
-	"fmt"
-	"math"
-)
-
-
-
 func main() {
-	a := math.Pow(2, 3)
-	fmt.Println(a)
+	var a float64 = 7.1
+
+	x, y := true, 3.7
+
+	c, x := 5.5, false
+
+	_, _, _, _ = c, x, y, a
 }
