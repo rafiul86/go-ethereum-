@@ -1,3 +1,3 @@
-module animal
+module expressions
 
 go 1.18
