@@ -2,15 +2,19 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 )
 func main() {
-	i, err := strconv.Atoi("65a")
+	a, b := 6, 0
 
-	if err != nil {
-		fmt.Println(err)
+	if b!=0 && division(a, b) == 2 {
+		fmt.Println("a/b = 2")
 	} else {
-		fmt.Println(i)
+		fmt.Println("a/b != 2")
 	}
+}
+
+
+func division(a, b int) int {
+	return a / b
 }
 
