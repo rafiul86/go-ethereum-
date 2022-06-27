@@ -2,12 +2,14 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 )
 
-func main() {
-	courses := []string{"golang", "python", "solidity"}
+func homePage(w http.ResponseWriter, r *http.Request ){
+	fmt.Fprintf(w, "Hello World!")
+}
 
-	for _, course := range courses {  
-		fmt.Println(course)
-	}
+func main() {
+	http.HandleFunc("/", homePage)
+	http.ListenAndServe(":8080", nil)
 }
