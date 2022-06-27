@@ -3,18 +3,11 @@ package main
 import (
 	"fmt"
 )
-func main() {
-	a, b := 6, 0
 
-	if b!=0 && division(a, b) == 2 {
-		fmt.Println("a/b = 2")
-	} else {
-		fmt.Println("a/b != 2")
+func main() {
+	courses := []string{"golang", "python", "solidity"}
+
+	for _, course := range courses {  
+		fmt.Println(course)
 	}
 }
-
-
-func division(a, b int) int {
-	return a / b
-}
-
