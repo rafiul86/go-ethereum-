@@ -1,15 +1,17 @@
 package main
 
-import (
-	"fmt"
-	"net/http"
-)
-
-func homePage(w http.ResponseWriter, r *http.Request ){
-	fmt.Fprintf(w, "Hello World!")
-}
-
+import "fmt"
+ 
 func main() {
-	http.HandleFunc("/", homePage)
-	http.ListenAndServe(":8080", nil)
+	age := -9
+	switch{
+	case age < 0 || age > 100:
+		fmt.Println("Invalid Age")
+	case age < 18 :
+		fmt.Println("You are minor!")
+	case age == 18 :
+		fmt.Println("Congratulations! You've just become major!")
+	default:
+		fmt.Println("You are major!")
+	}
 }
