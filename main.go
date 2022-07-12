@@ -2,16 +2,21 @@ package main
 
 import (
 	"fmt"
-	"os"
 )
  
-func main() {
-	var newFile *os.File 
-	fmt.Println(newFile)
+func agey() {
+	fmt.Println("Agey")
+}
+func pore() {
+	fmt.Println("pore")
+}
 
-	newFile, err := os.Create("test.txt")
-	os.WriteFile("test.txt", []byte("Hello World"), 0644)
-	if err != nil {
-		fmt.Println(err, newFile)
-	}
+func ahare() {
+	fmt.Println("ahare")
+}
+
+func main() {
+	defer agey()
+	pore()
+	defer ahare()
 }
