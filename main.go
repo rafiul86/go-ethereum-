@@ -2,21 +2,28 @@ package main
 
 import (
 	"fmt"
+	"sync"
 )
- 
-func agey() {
-	fmt.Println("Agey")
-}
-func pore() {
-	fmt.Println("pore")
+
+func printSlice(s string, wg *sync.WaitGroup) {
+	defer wg.Done()
+	fmt.Println(s)
+	
 }
 
-func ahare() {
-	fmt.Println("ahare")
-}
 
 func main() {
-	defer agey()
-	pore()
-	defer ahare()
+	var wg sync.WaitGroup
+
+	wg.Add(4)
+	mySlice := []string{
+		"go",
+		"solidity",
+		"python",
+		"javascript",
+	}
+	for _, v := range mySlice {
+		go printSlice(v, &wg)
+	}
+	wg.Wait()
 }
